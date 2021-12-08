@@ -1,8 +1,8 @@
 package com.example.moviesearch.model
 
-import com.example.kotlinlesson2.model.retrofit.ApiUtils
-import com.example.kotlinlesson2.model.retrofit.FilmApi
 import com.example.moviesearch.BuildConfig
+import com.example.moviesearch.model.retrofit.ApiUtils
+import com.example.moviesearch.model.retrofit.FilmApi
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -33,11 +33,9 @@ class RemoteDataSource {
             .build()
 
         client.newCall(request).enqueue(callback)
-
     }
 
     fun getPopularFilmsFromRemoteDataSource(callback: Callback<FilmModel>) {
         filmApi.getPopularFilm(BuildConfig.FILM_API_KEY, "ru-RU").enqueue(callback)
     }
-
 }

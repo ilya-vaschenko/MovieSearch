@@ -18,5 +18,4 @@ interface HistoryDao { //дата акцесс обжект =  управляе�
 
     @Delete
     fun delete(entity: HistoryEntity)
-
 }

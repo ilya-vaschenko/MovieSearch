@@ -7,10 +7,8 @@ import androidx.room.RoomDatabase
     entities = [HistoryEntity::class],
     version = 1,
     exportSchema = true
-)  //передаем наши таблицы, передаем версию, экспортшема-показывает типа логов, кто куда ходил
-abstract class HistoryDataBase : RoomDatabase() { //сам файл, в котором будет храниться таблица
+)
+abstract class HistoryDataBase : RoomDatabase() {
 
-
-    abstract fun historyDao(): HistoryDao //будет возвращать дао
-
+    abstract fun historyDao(): HistoryDao
 }

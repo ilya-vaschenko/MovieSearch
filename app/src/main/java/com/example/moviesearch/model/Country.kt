@@ -4,5 +4,4 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Country(var name: String = "none") : Parcelable {
-}
+data class Country(var name: String = "none") : Parcelable

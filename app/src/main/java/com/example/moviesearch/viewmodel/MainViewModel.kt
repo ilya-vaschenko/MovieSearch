@@ -16,9 +16,7 @@ import retrofit2.Response
 
 class MainViewModel(
     private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData()
-
-) :
-    ViewModel() {
+) : ViewModel() {
 
     private val repository: Repository = RepositoryImpl(RemoteDataSource())
 
@@ -62,9 +60,7 @@ class MainViewModel(
                 )
             )
         }
-
         return AppState.Success(filmsList)
-
     }
 
     private fun showFilmsWithoutAdult(filmsList: List<FilmDTO>): List<FilmDTO> {
@@ -77,5 +73,3 @@ class MainViewModel(
         return listWithoutAdult
     }
 }
-
-

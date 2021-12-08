@@ -1,4 +1,4 @@
-package com.example.kotlinlesson2.model.retrofit
+package com.example.moviesearch.model.retrofit
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

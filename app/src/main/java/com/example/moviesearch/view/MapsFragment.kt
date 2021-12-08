@@ -43,7 +43,6 @@ class MapsFragment : Fragment() {
         initSearchByAddress(getCountryList(country))
     }
 
-
     lateinit var country: Country
 
     override fun onCreateView(
@@ -67,20 +66,17 @@ class MapsFragment : Fragment() {
     private fun getCountryList(country: Country): List<String> { //метод для разделения одного стринга на массив стрингов
         val countriesList = mutableListOf<String>()
         val list = country.name.split(",")
-            .toTypedArray() //country.name = "Россия, Канада", countriesList = ["Россия","Канада"]
+            .toTypedArray()
         countriesList.addAll(list)
         return countriesList
-
     }
 
     private fun initSearchByAddress(list: List<String>) {
-
-        val geoCoder = Geocoder(context) //класс, кторый отображает адрес по координатам
+        val geoCoder = Geocoder(context)
         list.forEach {
             try {
                 val addresses = geoCoder.getFromLocationName(it, 1)
                 if (addresses.size > 0) {
-
                     map.addMarker(
                         MarkerOptions()
                             .position(LatLng(addresses[0].latitude, addresses[0].longitude))

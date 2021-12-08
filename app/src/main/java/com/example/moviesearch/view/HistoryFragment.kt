@@ -27,7 +27,6 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_history, container, false)
 
         _binding = FragmentHistoryBinding.bind(view)
@@ -44,7 +43,6 @@ class HistoryFragment : Fragment() {
                 adapter.setData(listForAdapter)
             }
         }.start()
-
     }
 
     override fun onDestroyView() {

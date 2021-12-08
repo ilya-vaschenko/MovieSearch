@@ -6,9 +6,9 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Film(
     var id: Long = 550,
-    var name: String = "Заяц",
-    var genre: String = "Ужасы",
-    var date: String = "2020",
+    var name: String = "",
+    var genre: String = "",
+    var date: String = "",
     var imageIndex: Int = 0,
     var description: String = "Нет описания",
     val posterPath: String? = "",

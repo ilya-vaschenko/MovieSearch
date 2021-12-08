@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
             .setNegativeButton("ok!") { dialog, _ -> dialog.dismiss() }
             .create()
             .show()
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }

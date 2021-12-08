@@ -28,7 +28,6 @@ import com.example.moviesearch.viewmodel.AppState
 import com.example.moviesearch.viewmodel.DetailViewModel
 import kotlinx.android.synthetic.main.detail_fragment.*
 
-
 class DetailFragment : Fragment() {
 
     companion object {
@@ -90,12 +89,10 @@ class DetailFragment : Fragment() {
                 ) != PackageManager.PERMISSION_GRANTED
             ) return@setOnClickListener
         }
-
     }
 
     private val permissionResult =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { result ->
-
             when {
                 result -> activity?.supportFragmentManager?.let {
                     it.beginTransaction()
@@ -104,7 +101,6 @@ class DetailFragment : Fragment() {
                                 MapsFragment.COUNTRIES_EXTRA,
                                 country
                             )
-
                         }))
                         .addToBackStack("")
                         .commit()
@@ -135,7 +131,6 @@ class DetailFragment : Fragment() {
                         .setNegativeButton("Нет") { dialog, _ -> dialog.dismiss() }
                         .create()
                         .show()
-
                 }
                 else -> Toast.makeText(
                     requireContext(),

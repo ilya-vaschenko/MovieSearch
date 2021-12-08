@@ -45,7 +45,6 @@ class DetailViewModel() : ViewModel(), LifecycleObserver {
                     response.body()?.string()?.let { body ->
 
                         detailLiveData.postValue(checkResponse(body))
-
                     }
                 }
             })
@@ -65,7 +64,6 @@ class DetailViewModel() : ViewModel(), LifecycleObserver {
                         description = filmDTO.overview ?: "",
                         posterPath = filmDTO.poster_path ?: "",
                         country = getCountry(filmDTO.production_countries)
-
                     )
                 )
             )
@@ -97,7 +95,6 @@ class DetailViewModel() : ViewModel(), LifecycleObserver {
                 title = film.name,
                 timestamp = Date().time,
                 notes = note
-
             )
         )
     }

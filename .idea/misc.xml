@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/detail_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/fragment_history.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/fragment_maps.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/item_film.xml" value="0.1" />
+        <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/item_history.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/main_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/layout/main_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Project/MovieSearch/app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>

@@ -1,4 +1,4 @@
-package com.example.kotlinlesson2.model.retrofit
+package com.example.moviesearch.model.retrofit
 
 import com.example.moviesearch.model.FilmDTO
 import com.example.moviesearch.model.FilmModel

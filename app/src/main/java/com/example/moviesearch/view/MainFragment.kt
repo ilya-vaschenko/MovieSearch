@@ -74,24 +74,19 @@ class MainFragment : Fragment() {
             viewModel.getFilmFromRemoteDataSource(isAdult())
         }
 
-        ////////////нажатие на чек бокс - сохраняет значение
         button_adult.setOnCheckedChangeListener { buttonView, isChecked ->
             setDataSetToDisk(isChecked) //записываем тру или фолс
         }
 
-        ///////////при создании экрана(перезапуск приложения) узнает нажато или нет
         button_adult.isChecked = isAdult()
-
     }
 
-    ////////////////////////////////////////////////////СОХРАНЯЕМ
     private fun setDataSetToDisk(isAdult: Boolean) {
-        val editor = activity?.getPreferences(Context.MODE_PRIVATE)?.edit() //открываем на чтение
-        editor?.putBoolean(dataSetKey, isAdult) //сохраняем буленовское значение в преференсы
-        editor?.apply() //апплай работает ассинхронно
+        val editor = activity?.getPreferences(Context.MODE_PRIVATE)?.edit()
+        editor?.putBoolean(dataSetKey, isAdult)
+        editor?.apply()
     }
 
-    ////////////////////////ПОЛУЧАЕМ
     private fun isAdult(): Boolean {
         activity?.let {
             return activity
@@ -135,7 +130,6 @@ class MainFragment : Fragment() {
                     "Reload",
                     { viewModel.getFilmFromRemoteDataSource(isAdult()) }
                 )
-
             }
         }
     }
