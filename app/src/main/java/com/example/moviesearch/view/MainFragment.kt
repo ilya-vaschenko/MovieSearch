@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.moviesearch.BuildConfig
 import com.example.moviesearch.R
 import com.example.moviesearch.databinding.MainFragmentBinding
 import com.example.moviesearch.viewmodel.AppState
@@ -48,6 +49,8 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.version.text = BuildConfig.TYPE
 
         filmAdapter.listener =
             FilmAdapter.OnItemViewClickListener { film ->
