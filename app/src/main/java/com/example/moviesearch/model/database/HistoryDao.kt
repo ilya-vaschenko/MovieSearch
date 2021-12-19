@@ -3,11 +3,11 @@ package com.example.moviesearch.model.database
 import androidx.room.*
 
 @Dao
-interface HistoryDao { //дата акцесс обжект =  управляет
-    @Query("SELECT * FROM HistoryEntity") //запрос к базе данных (на языке sql
-    fun all(): List<HistoryEntity> //метод будет возвращать нам все элементы в базе в виде листа
+interface HistoryDao {
+    @Query("SELECT * FROM HistoryEntity")
+    fun all(): List<HistoryEntity>
 
-    @Query("SELECT * FROM HistoryEntity WHERE title LIKE :title") //поиск по слову со всеми вхождениями этого слова в поле title
+    @Query("SELECT * FROM HistoryEntity WHERE title LIKE :title")
     fun getDataByName(title: String): List<HistoryEntity>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
