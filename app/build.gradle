@@ -5,12 +5,25 @@ plugins {
     id 'kotlin-kapt'
 
 }
-
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
-
 android {
     compileSdk 30
+
+    signingConfigs {
+        release {
+            Properties properties = new Properties()
+            properties.load (rootProject.file("apikey.properties").newDataInputStream())
+            // def password  = properties.getProperty("key")
+            def password = "qwerty"
+
+            storeFile file("keystore.jks")
+            storePassword 'qwerty'
+            keyAlias 'key'
+            keyPassword = password
+        }
+    }
+
 
     defaultConfig {
         applicationId "com.example.moviesearch"
@@ -23,9 +36,28 @@ android {
     }
 
     buildTypes {
-        release {
+
+        debug {
             minifyEnabled false
+            versionNameSuffix '-debug'
+            buildConfigField "String" , "TYPE", '"DEBUG"'
+
+        }
+
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            versionNameSuffix '-relese'
+            buildConfigField "String" , "TYPE", '"RELEASE"'
+
+        }
+
+        staging{
+            initWith debug
+            versionNameSuffix '-staging'
+            buildConfigField "String" , "TYPE", '"STAGING"'
+            debuggable false
         }
     }
 
@@ -39,6 +71,17 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    flavorDimensions 'version'
+    productFlavors {
+        free {
+            dimension 'version'
+            versionNameSuffix '.free'
+        }
+        paid {
+            dimension 'version'
+            versionNameSuffix '.paid'
+        }
     }
 
     buildTypes.each {

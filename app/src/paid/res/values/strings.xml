@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MovieSearch</string>
+    <string name="Add_note">Сохранить</string>
+    <string name="Country">Country: </string>
+</resources>
